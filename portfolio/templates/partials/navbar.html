@@ -1,18 +1,18 @@
 {% load static %}
-
+           <!--menu cabezal-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand fw-bold fst-italic" href="/">Portfolio Enrique Viliguer</a>
+      <a class="btn btn-primary btn-sm fw-bold fst-italic" href="/">Principal</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'blog:posts' %}">Blog</a>
+            <a class="btn btn-primary btn-sm fw-bold me-4  fst-italic" href="{% url 'blog:posts' %}">Proyectos</a>
           </li>
           <li class="nav-item d-flex align-items-center">
-            <a class="btn btn-primary btn-sm" href="{% static 'portfolio/Cv-EnriqueViliguer2023.pdf' %}" target="_blank" >
+            <a class="btn btn-primary btn-sm  fst-italic" href="{% static 'portfolio/Cv-EnriqueViliguer2023.pdf' %}" target="_blank" >
               Descargar CV
             </a>
           </li>

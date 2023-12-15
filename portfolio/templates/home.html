@@ -1,65 +1,58 @@
 {% extends 'layout.html' %}
 {% block content %}
 {% load static %}
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 
+           <!--encabezado -->
 <header class="row bg-black">
-     <div class="col-md-4">
-        <img src="{% static 'portfolio/kike32derechamejoradoreducido.png' %} " alt="" >
+     <div class="col-md-4 ">
+        <img class="rounded-circle" src="{% static 'portfolio/kike32derechamejoradoreducido.png' %} " alt="" >
      </div>
-
+          <!--seccion sobre mi -->
+          
      <div class="col-md-8 my-auto ">
-        <h1>Mi nombre es<strong> Enrique Viliguer</strong> </h1>
-        <h3>Soy Desarrolador Back-End</h3>
+        <h1 class="text-danger ms-5">Sobre mi</h1>
+        <h1>Soy<strong class="text-danger"> Enrique Viliguer</strong> </h1>
+        <h3>Desarrolado en Back-End</h3>
         <p>
-           Me considero una persona Multitasking y autodidacta,apasionado por la tecnologia con muchas ganas de formar parte de un grupo laboral.<br>Soy muy objetivo en mis metas y tareas que me asignen.
+           Me considero una persona Multitasking y autodidacta,con muchas ganas de formar parte de un grupo laboral.<br>Soy muy objetivo en mis metas y tareas que me asignen.<br>
            Trabajo en proyectos desarrollando Api's con sus metodos HTTP.Desarrollo en base de datos relacionales y no relacionales con sus operaciones CRUD.
         </p>
+            <!--redes sociales -->       
+           <div class="redes-sociales">
+          <ul class="list-group list-group-horizontal position-relative gap-5">
 
-        <a href="{% static 'portfolio/Cv-EnriqueViliguer2023.pdf' %}" class="btn btn-primary tbn-lg rounded-0 my-3">Descargar CV</a>
+            <!--enlace de la red social linkedin -->
+              <a href="https://www.linkedin.com/in/enrique-viliguer-it/" target="_blank">
+                <img class="rounded-circle" src="{% static 'portfolio/logolinkedin-1.jpg' %}">
+              </a>
+            
+            <!--enlace de la red social github --->
+              <a href="https://www.github.com/enrique986" target="_blank">
+                <img class="rounded-circle" src="{% static 'portfolio/logogithub.jpg' %}" >
+              </a>
+            
+            <!--enlace del email--> 
+              <a href="mailto:eviliguer@gmail.com?subject=Propuesta%20Laboral&body=Hola%20Enrique%2C%0A%0AQuisiera%20saber%20si%20seguis%20interesado%20en%20la%20busqueda%20laboral?..." target="_blank">
+                <img class="rounded-circle" src="{% static 'portfolio/logogmail.jpg' %}" >
+              </a>
+          </ul>
+        </div>   
 
      </div>
-     
-     
-     <div class="col-md-18 my-auto text-center">
-      <h1>
-         Skills
-      </h1>
-       <h2><ins>Lenguajes</ins></h2>
-      
-      <img class="rounded" src="{% static 'portfolio/imgjavascript.jpg' %}" alt="">
-      <img src="{% static 'portfolio/imgpython.jpg' %}" alt="" >
-      <img src="{% static 'portfolio/imgcss.jpg ' %}">
-      <img src="{% static 'portfolio/imgmysql.jpg' %}">
-      <img src="{% static 'portfolio/img-mongodb.jpg' %}">
-      
-      <h2><ins>Framework</ins></h2>
-      <img src="{% static 'portfolio/imgdjango.jpg' %}">
-      <img src="{% static 'portfolio/imgflask.jpg' %}">
-      <img src="{% static 'portfolio/img-bootstrap.jpg' %}">
+
+            <!--seccion mis proyectos-->
+  <div class="row my-4 text-center"> 
+   <h1 class="text-danger">mis proyectos</h1>
+   <p>Desarrolle diferentes proyectos manejando base de datos dando mis servicios creando usuarios con sus repectivas claves par el ingreso validando las mismas.Realice una To-Do list para crear,modificar y eliminar tareas.subiendo todos los proyectos en github,te invito a igresar a mi Portfolio y veas los proyectos realizados    </p>
 
 
-      <h2><ins>Libreria</ins></h2>
-     <img src="{% static 'portfolio/imgreact.jpg' %}">
-   
-      
-     </div>
+            <!--tarjeta presentacion de los proyectos-->
+      {% for project in projects %}
 
-</header>
-
-
-
-
-<div class="row my-4 text-center"> 
-   <h3>mis proyectos</h3>
-   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi deserunt provident id quae aut iste, corrupti aliquam dicta iusto officia asperiores perferendis nam numquam dignissimos ab iure unde totam eius.</p>
-
-
-
- {% for project in projects %}
-
- <div class="col-md-4 p-4">
-   <div class="card bg-light card-project"> 
+    <div class="col-md-4 p-4">
+      <div class="card bg-light card-project"> 
       <img src="{{project.image.url}}" alt="{{project.title}}"  class="card-img-top"/>
      
       <div class="card-body">
@@ -75,9 +68,38 @@
    </div>
 
  </div>
+     
  {% endfor %}
  
- </div>
  
  
+ 
+           <!--seccion skills-->
+     <div class="col-md-18 my-auto text-center">
+      <h1 class="text-danger">
+         Skills
+      </h1>
+       <h2 class="mb-5"><ins>Lenguajes</ins></h2>
+      
+      <img class="rounded me-5" src="{% static 'portfolio/imgjavascript.jpg' %}" alt="">
+      <img class="me-5" src="{% static 'portfolio/imgpython.jpg' %}" alt="">
+      <img class="me-5" src="{% static 'portfolio/imgcss.jpg ' %}">
+      <img class="me-5" src="{% static 'portfolio/imgmysql.jpg' %}">
+      <img class="me-5" src="{% static 'portfolio/img-mongodb.jpg' %}">
+      
+      <h2 class="mb-5 mt-4"><ins>Framework</ins></h2>
+      <img class="me-5" src="{% static 'portfolio/imgdjango.jpg' %}">
+      <img class="me-5" src="{% static 'portfolio/imgflask.jpg' %}">
+      <img src="{% static 'portfolio/img-bootstrap.jpg' %}">
+
+
+      <h2 class="mb-5 mt-4"><ins>Libreria</ins></h2>
+     <img src="{% static 'portfolio/imgreact.jpg' %}">
+   
+      
+     </div>
+
+</header>
+</div>
 {% endblock %}
+
